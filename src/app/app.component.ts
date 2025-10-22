@@ -3,12 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './_components/navbar/navbar.component';
 import { PrimaryButtonComponent } from './_components/primary-button/primary-button';
+import { SecondaryButtonComponent } from "./_components/secondary-button/secondary-button";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, NavbarComponent, PrimaryButtonComponent],
+  imports: [RouterOutlet, CommonModule, NavbarComponent, PrimaryButtonComponent, SecondaryButtonComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
