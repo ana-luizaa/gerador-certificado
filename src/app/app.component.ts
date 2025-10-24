@@ -8,12 +8,13 @@ import { ItemCertificadoComponent } from "./_components/item-certificado/item-ce
 import { BaseUiComponent } from "./_components/base-ui/base-ui";
 import { CertificadosComponentes } from "./pages/certificados/certificados";
 import { CertificadoFormComponent } from "./pages/certificado-form/certificado-form";
+import { CertificadoComponente } from "./pages/certificado/certificado";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, NavbarComponent, PrimaryButtonComponent, SecondaryButtonComponent, ItemCertificadoComponent, BaseUiComponent, CertificadosComponentes, CertificadoFormComponent],
+  imports: [RouterOutlet, CommonModule, NavbarComponent, PrimaryButtonComponent, SecondaryButtonComponent, ItemCertificadoComponent, BaseUiComponent, CertificadosComponentes, CertificadoFormComponent, CertificadoComponente],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
