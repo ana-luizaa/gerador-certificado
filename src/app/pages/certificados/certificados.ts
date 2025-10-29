@@ -5,10 +5,10 @@ import { ItemCertificadoComponent } from "../../_components/item-certificado/ite
 @Component({
   selector: 'app-certificados',
   standalone: true,
-  imports: [SecondaryButtonComponent, ItemCertificadoComponent],
+  imports: [ ItemCertificadoComponent],
   templateUrl: './certificados.html',
   styleUrl: './certificados.css'
 })
-export class CertificadosComponentes {
+export class CertificadosComponent {
 
 }

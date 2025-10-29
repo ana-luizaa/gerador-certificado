@@ -8,6 +8,6 @@ import { SecondaryButtonComponent } from "../../_components/secondary-button/sec
   templateUrl: './certificado.html',
   styleUrl: './certificado.css'
 })
-export class CertificadoComponente {
+export class CertificadoComponent {
 
 }
