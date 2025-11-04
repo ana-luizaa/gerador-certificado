@@ -4,6 +4,7 @@ import { SecondaryButtonComponent } from "../../_components/secondary-button/sec
 import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Certificado } from '../../interfaces/certificado';
+import { CertificadoService } from '../../_services/certificado.services';
 
 @Component({
   selector: 'app-certificado-form',
@@ -14,16 +15,17 @@ import { Certificado } from '../../interfaces/certificado';
 })
 export class CertificadoFormComponent {
 
-
-  atividade: string = '';
+  constructor(private certificadoService: CertificadoService){}
 
   certificado: Certificado = {
     atividades: [],
-    nome: ''
+    nome: '',
+    dataEmissao: ''
   };
+   atividade: string = '';
 
   campoInvalido(control: NgModel) {
-    return control.invalid && control.touched
+    return control.invalid && control.touched;
   }
 
   formValido() {
@@ -36,7 +38,7 @@ export class CertificadoFormComponent {
   }
 
   excluirAtividade(index: number) {
-    this.certificado.atividades.splice(index, 1)
+    this.certificado.atividades.splice(index, 1);
   }
 
   // passando as informações da lista para o certificado
@@ -44,6 +46,17 @@ export class CertificadoFormComponent {
     if (!this.formValido()) {
       return;
     }
-    console.log(this.certificado);
+    this.certificado.dataEmissao = this.dataAtual();
+    this.certificadoService.adicionarCertificado(this.certificado);
+  }
+
+  dataAtual(){
+    const dataAtual = new Date(); // para exibir a data que foi gerado o certificado
+    const dia = String(dataAtual.getDate()).padStart(2, '0'); // limitei para 2 digitos
+    const mes = String(dataAtual.getMonth() + 1).padStart(2, '0');
+    const ano = dataAtual.getFullYear();
+
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+    return dataFormatada;
   }
 }
